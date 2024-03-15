@@ -1,10 +1,10 @@
 const mysql = require("mysql2/promise");
 const databaseConfig = require("../config/database.js");
 
-async function getAllUser() {
+async function getAllProduto() {
   const connection = await mysql.createConnection(databaseConfig);
 
-  const [rows] = await connection.query("SELECT * FROM user");
+  const [rows] = await connection.query("SELECT * FROM produto");
 
   await connection.end();
 
@@ -12,5 +12,5 @@ async function getAllUser() {
 }
 
 module.exports = {
-  getAllUser,
+  getAllProduto,
 };

@@ -1,5 +1,6 @@
 const express = require("express");
 const userRouter = require("./router/userRouter.js");
+const produtoRouter = require("./router/produtoRouter.js");
 
 const PORT = 3000;
 
@@ -10,6 +11,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", userRouter);
+app.use("/api", produtoRouter);
 
 app.listen(PORT, () => {
   console.log("Servidor oline");
